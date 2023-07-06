@@ -1,0 +1,59 @@
+*:focus{
+    outline: none;
+}
+
+.patientNumberForm{
+    grid-column-start: middleLeft;
+    grid-row-start: middleLeft;
+    grid-column-end: middleRight;
+    grid-row-end: middleLeft;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputCon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: solid #FFFFFF;
+    box-shadow: 4px 4px 0 4px #223944;
+    height: 10vh;
+    width: 80vw;
+    align-content: stretch;
+}
+
+.numberInput {
+    display: flex;
+    height: 8vh;
+    width: 75vw;
+    border: none;
+    background-color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 1rem;
+    font-size: 5vw;
+    color: #223944;
+}
+.errorSymbol{
+    max-height: 2rem;
+    max-width: 2rem;
+    padding-right: 1rem;
+}
+.error{
+    color: #DF4807;
+    font-size: 2vw;
+    z-index: 1;
+    position: absolute;
+}
+
+.forgotButton{
+    margin-top: 1rem;
+    border: none;
+    background-color: #F5F4F3;
+    font-size: 0.6rem;
+    text-decoration: underline;
+}
