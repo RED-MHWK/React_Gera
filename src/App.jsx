@@ -1,37 +1,18 @@
-import SRH_Logo from './assets/SRH_Logo_white.svg'
-import pipe from './assets/pipe.svg'
-import Character from './assets/SRH_Nurse_cutout.svg'
-import './App.css'
-import PatientNumberInput from "./components/patientnumber/patientnumber.jsx";
-import ForwardButton from "./components/forwardButton/forwardButton.jsx";
+import {Route, Switch} from 'wouter';
+
+import Login from "./components/Login/login.jsx";
+import Idle from "./components/Idle/Idle.jsx"
 
 function App() {
 
-//usestate hook for value statehook als prop zu button
 
   return (
-        <>
-            <div className={'gridCon'}>
-                <div className={'mainHeader'}></div>
-                <img src={pipe} alt={'SRH-Pipe'} className={'pipe'}/>
 
-                <div className={'logoCont'}>
-                <img src={SRH_Logo} alt={'SRH-Logo'} className={'srhLogo'}/>
-                <p className={'logoText'}>Wald-Klinikum<br/>Gera</p>
-                </div>
+    <Switch>
+        <Route path='/Login' component={Login}/>
+        <Route path='/' component={Idle}/>
+    </Switch>
 
-                <div className={'h2Cont'}>
-                <p className={'h2'}>Bitte geben Sie Ihre <span className={'h2Highligth'}>Patientennummer</span> ein.</p>
-                </div>
-
-                <div className={'middleCont'}>
-                <img src={Character} alt={'Nurse-Character'} className={'nurse'}/>
-                <PatientNumberInput/>
-                </div>
-
-                <ForwardButton></ForwardButton>
-            </div>
-        </>
   )
 }
 
