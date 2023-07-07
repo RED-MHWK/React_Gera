@@ -1,0 +1,14 @@
+/************************ Main-Grid ************************/
+.gridCon{
+    display: grid;
+    grid-template-areas:
+    "upperLeft upperMiddle upperRight"
+    "middleLeft middle middleRight"
+    "downLeft downMiddle downRight"
+;
+}
+/************************ /Main-Grid ************************/
+
+.placeHolder{
+    grid-area: middle;
+}

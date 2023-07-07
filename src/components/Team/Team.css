@@ -1,0 +1,10 @@
+.teamBg{
+    grid-row-start: upperLeft;
+    grid-column-start: upperLeft;
+    grid-row-end: upperRight;
+    grid-column-end: upperRight;
+    height: 12rem;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+}

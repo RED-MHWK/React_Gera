@@ -1,0 +1,80 @@
+.headerBg{
+    grid-row-start: upperLeft;
+    grid-column-start: upperLeft;
+    grid-row-end: upperRight;
+    grid-column-end: upperRight;
+    height: 12rem;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+}
+.appointmentHeadline{
+    color: #DF4807;
+    font-size: 2rem;
+    align-self: flex-end;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+.appointmentInformation{
+    grid-row-start: middleLeft;
+    grid-column-start: middleLeft;
+    grid-row-end: middleRight;
+    grid-column-end: middleRight;
+    display: flex;
+    background-color: #DF4807;
+    height: 14rem;
+    width: 100%;
+    color: #FFFFFF;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.informationText{
+    margin-left: 1rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 0;
+    font-size: 1.3rem;
+}
+.floorTagBg{
+    background-color: blueviolet;
+    border-radius: 4px 4px 4px 4px;
+    height: 1.5rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.floorTag{
+
+}
+.menuButtonCont{
+    grid-row-start: downLeft;
+    grid-column-start: downLeft;
+    grid-row-end: downRight;
+    grid-column-end: downRight;
+    display: flex;
+    flex-direction: column;
+}
+.menuButtons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #FFFFFF;
+    height: 6rem;
+    width: 100%;
+    background-color: #00699A;
+    border-bottom: #223944 solid 1px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    line-height: 140%;
+}
+.footer{
+    background-color: #223944;
+    height: 2.7rem;
+    width: 100%;
+}

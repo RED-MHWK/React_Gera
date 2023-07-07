@@ -1,0 +1,34 @@
+
+.logoCont{
+    display: flex;
+    grid-row-start: upperLeft;
+    grid-column-start: upperLeft;
+    grid-row-end: upperMiddle;
+    grid-column-end: upperMiddle;
+}
+
+.srhLogo{
+
+    height: 4rem;
+    width: 4.5rem;
+    margin-top: 2.2rem;
+    margin-left: 1rem;
+}
+
+.logoText{
+
+    margin-top: 3.3rem;
+    margin-left: 0.6rem;
+    color: #FFFFFF;
+    font-family: "SRH Headline";
+    line-height: 100%;
+}
+
+.pipe{
+    display: flex;
+    grid-row-start: upperLeft;
+    grid-column-start: upperLeft;
+    grid-row-end: upperRigth;
+    grid-column-end: upperRight;
+
+}
