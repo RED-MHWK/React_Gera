@@ -1,0 +1,7 @@
+{
+  "login.ForgottenNumber.button": "Patientennummer vergessen?",
+  "login.Header.part1": "Bitte geben Sie Ihre",
+  "login.Header.part2": "Patientennummer",
+  "login.Header.part3": "ein",
+  "login.Patientnumber.error": "Diese Patientennummer scheint nicht zu existieren"
+}

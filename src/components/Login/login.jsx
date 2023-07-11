@@ -1,6 +1,9 @@
 import {useState} from "react";
 import {useLocation} from "wouter";
 
+import messages from './login.messages.js';
+import {FormattedDate, FormattedMessage, FormattedNumber} from "react-intl";
+
 import Header from "../Header/Header.jsx";
 
 import './Login.css'
@@ -69,7 +72,7 @@ function Login() {
                 <Header></Header>
 
                 <div className={'h2Cont'}>
-                    <p className={'h2'}>Bitte geben Sie Ihre <span className={'h2Highligth'}>Patientennummer</span> ein.</p>
+                    <p className={'h2'}><FormattedMessage {...messages.loginHeaderp1}/><span className={'h2Highligth'}><FormattedMessage {...messages.loginHeaderp2}/></span><FormattedMessage {...messages.loginHeaderp3}/></p>
                 </div>
 
                 <div className={'middleCont'}>

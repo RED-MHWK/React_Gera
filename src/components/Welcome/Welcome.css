@@ -1,0 +1,16 @@
+.welcomeHeader{
+    grid-row-start: upperLeft;
+    grid-column-start: upperLeft;
+    grid-row-end: upperRight;
+    grid-column-end: upperRight;
+    height: 16rem;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-bottom: 5vh;
+}
+.nurseWelcome{
+    grid-row-start: midlleLeft;
+    grid-column-start: middleLeft;
+    grid-row-end: downRight;
+    grid-column-end: downRight;
+}

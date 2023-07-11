@@ -10,13 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@formatjs/cli": "^6.1.3",
+    "jotai": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.4.4",
     "wouter": "^2.11.0"
   },
   "devDependencies": {
+    "@formatjs/cli": "^6.1.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
