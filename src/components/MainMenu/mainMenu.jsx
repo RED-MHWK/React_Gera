@@ -2,6 +2,7 @@ import Header from "../Header/Header.jsx";
 import './MainMenu.css'
 import {useLocation} from "wouter";
 
+
 function Menu(){
     const [location, setLocation] = useLocation();
     return(

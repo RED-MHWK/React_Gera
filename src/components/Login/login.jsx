@@ -84,7 +84,9 @@ function Login() {
                            type={'text'} maxLength={6}/>
                             {showErrorSymbol && <img src={alert} alt={'Alert-symbol'} className={'errorSymbol'}/>}
                     </div>
+                    <div className={'errorCon'}>
                         {showError && <p className={'error'}>Please enter your Patientnumber</p>}
+                    </div>
 
                         <button className={'forgotButton'} onClick={() => setLocation("/")}>Patientennummer vergessen?</button>
                      </form>

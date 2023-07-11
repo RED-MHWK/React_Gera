@@ -104,11 +104,14 @@
     max-width: 2rem;
     padding-right: 1rem;
 }
+.errorCon{
+    grid-area: downMiddle;
+}
 .error{
     color: #DF4807;
-    font-size: 2vw;
+    font-size: 0.6rem;
     z-index: 1;
-    position: absolute;
+
 }
 /*** /Error-styling ***/
 
