@@ -11,6 +11,9 @@
 .nurseWelcome{
     grid-row-start: midlleLeft;
     grid-column-start: middleLeft;
-    grid-row-end: downRight;
-    grid-column-end: downRight;
+    grid-row-end: downMiddle;
+    grid-column-end: downMiddle;
+    height: 30rem;
+    position: absolute;
+    bottom: 0;
 }
