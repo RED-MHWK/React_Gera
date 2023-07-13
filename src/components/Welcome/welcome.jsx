@@ -5,10 +5,10 @@ function Welcome() {
 
     return (
         <>
+            <dialog></dialog>
             <div className={'gridCon'}>
                 <div className={'welcomeHeader'}></div>
                 <Header></Header>
-                <button className={'fo'}></button>
                 <img src={Character} alt={'NurseCharacter'} className={'nurseWelcome'}/>
             </div>
         </>

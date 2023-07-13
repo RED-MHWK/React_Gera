@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {Route, Switch} from 'wouter';
 import {IntlProvider} from "react-intl";
 import {atom, useAtom} from "jotai";
@@ -31,6 +32,8 @@ export {localeAtom};
 function App() {
 
 const [locale] = useAtom(localeAtom);
+
+const [passQrValue, setPassQrValue] = useState('');
 
   return (
 <IntlProvider locale={locale} defaultLocale={DEFAULT_LOCALE} messages={MESSAGES[locale]}>

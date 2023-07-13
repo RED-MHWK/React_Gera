@@ -1,11 +1,21 @@
 import {useEffect, useState} from "react";
 import {useLocation} from "wouter";
 import {Html5QrcodeScanner, Html5QrcodeScanType} from "html5-qrcode";
+
+import messages from './qrScan.messages.js';
+import {FormattedMessage} from "react-intl";
+
 import Header from "../Header/Header.jsx";
 
 import './QrScanner.css'
 
-function QrScanner(){
+
+
+function QrScanner(setPassQrValue){
+
+    const [location, setLocation] = useLocation();
+
+
 
     useEffect(() => {
 
@@ -25,31 +35,27 @@ function QrScanner(){
 
         function qrSucces(qrResult){
             scanner.clear();
-            setScanResult(qrResult);
+            console.log(qrResult)
+            setLocation("/");
+            setPassQrValue(qrResult);
         }
         function qrError(qrErr){
-            console.warn(qrErr);
+           // console.warn(qrErr);
         }
 
-    },[])
+    },[setLocation, setPassQrValue])
 
-    /*
-    const [scanResult, setScanResult] = useState('');
-    */
-
-    /*
-    function qrCodeInput(){
-        document.getElementById('qrIdValue').value = scanResult;
-    }
-
-    */
 
     return(
         <>
         <div className={'gridCon'}>
             <div className={'scanHeaderBg'}></div>
             <Header></Header>
+            <div className={'h2Cont'}>
+                <p className={'h2'}><FormattedMessage {...messages.qrScanHeaderp1}/><span className={'h2Highligth'}><FormattedMessage {...messages.qrScanHeaderp2}/></span><FormattedMessage {...messages.qrScanHeaderp3}/></p>
+            </div>
             <div className={'qrScanner'} id={'reader'}></div>
+
         </div>
         </>
     )
