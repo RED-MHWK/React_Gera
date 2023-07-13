@@ -13,6 +13,7 @@ import DocsAdmission from "./components/DocsAndAdmission/docsAdmission.jsx";
 import Team from "./components/Team/team.jsx";
 
 import "./App.css"
+import QrScanner from "./components/QrScanner/qrScanner.jsx";
 
 
 
@@ -40,6 +41,7 @@ const [locale] = useAtom(localeAtom);
         <Route path={'/ResponsibleTeam'} component={Team}/>
         <Route path={'/Menu'} component={Menu}/>
         <Route path={'/Welcome'} component={Welcome}/>
+        <Route path={'/QrScanner'} component={QrScanner}/>
         <Route path={'/'} component={Login}/>
     </Switch>
 </IntlProvider>

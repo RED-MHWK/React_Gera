@@ -20,6 +20,10 @@ function Login() {
 
     const correctNumber = 'ABC123';
 
+
+
+
+
     const [patientNumber , setPatientNumber] = useState('');
 
     const [showError , setShowError] = useState(false);
@@ -37,6 +41,8 @@ function Login() {
     const [buttonAvailability, setButtonAvailability] = useState(false);
     const buttonAvailable = `buttonAvailability${buttonAvailability ? 'Available' : 'Unavailable'}`;
 
+    const [qrScanAvailability, setQrScanAvailability] = useState(true);
+    const qrScanAvailable = `qrScanAvailability${qrScanAvailability ? 'Available' : 'Unavailable'}`;
 
     const [location, setLocation] = useLocation();
 
@@ -51,6 +57,7 @@ function Login() {
         setShowError(value != correctNumber && value.length == 6);
         setShowErrorSymbol(value != correctNumber && value.length == 6);
 
+        setQrScanAvailability(value == '');
         setQrHidden(value != '');
         setHidePushableButton(value == correctNumber);
         setHideInactiveButton(value != '' && value != correctNumber);
@@ -62,7 +69,6 @@ function Login() {
         input.value = input.value.toUpperCase();
         input.setSelectionRange(start, end);
     }
-
 
     return (
         <>
@@ -82,6 +88,7 @@ function Login() {
 
                     <div className={'inputCon'}>
                          <input className={'numberInput'}
+                           id={'qrIdValue'}
                            name={'patientNumber'}
                            onChange={onPatientNumberChange}
                            type={'text'} maxLength={6}/>
@@ -98,6 +105,7 @@ function Login() {
                 <div className={'buttonCon'}>
                     <div className={'buttonBg'}>
                         <button className={buttonAvailable} onClick={() => setLocation("/Menu")}></button>
+                        <button className={qrScanAvailable} onClick={() => setLocation("/QrScanner")}></button>
                         <img src={arrow} alt={'Forward-Button-Icon'} className={pushAbleButton}/>
                         <img src={disArrow} alt={'Forward-Button-Icon_disabled'} className={inActiveButton}/>
                         <img src={qrCodeIcon} alt={'QrCode-Icon'} className={qrVisibility}/>

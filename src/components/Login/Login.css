@@ -236,5 +236,23 @@
     opacity: 0;
     visibility: hidden;
 }
+.qrScanAvailabilityAvailable{
+    position: absolute;
+    z-index: 3;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10rem 10rem 10rem 10rem;
+    opacity: 0;
+}
+.qrScanAvailabilityUnavailable{
+    position: absolute;
+    z-index: 3;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10rem 10rem 10rem 10rem;
+    opacity: 0;
+    visibility: hidden;
+}
+
 /*** /Button-Availability ***/
 /************************ /Buttons ***********************/
