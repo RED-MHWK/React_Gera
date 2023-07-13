@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useLocation} from "wouter";
 import {Html5QrcodeScanner, Html5QrcodeScanType} from "html5-qrcode";
+import Header from "../Header/Header.jsx";
 
 import './QrScanner.css'
 
@@ -13,7 +14,7 @@ function QrScanner(){
                 width: 250,
                 height: 250,
             },
-            fps: 6,
+            fps: 1,
             rememberLastUsedCamera: true,
             supportedScanTypes: [
                 Html5QrcodeScanType.SCAN_TYPE_CAMERA
@@ -44,7 +45,13 @@ function QrScanner(){
     */
 
     return(
-        <div  id={'reader'}></div>
+        <>
+        <div className={'gridCon'}>
+            <div className={'scanHeaderBg'}></div>
+            <Header></Header>
+            <div className={'qrScanner'} id={'reader'}></div>
+        </div>
+        </>
     )
 }
 
