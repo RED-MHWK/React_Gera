@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {Route, Switch} from 'wouter';
 import {IntlProvider} from "react-intl";
 import {atom, useAtom} from "jotai";
@@ -12,11 +11,14 @@ import AppointmentDetails from "./components/AppointmentDetails/appointmentDetai
 import Checklist from "./components/Checklist/checklist.jsx";
 import DocsAdmission from "./components/DocsAndAdmission/docsAdmission.jsx";
 import Team from "./components/Team/team.jsx";
-
-import "./App.css"
 import QrScanner from "./components/QrScanner/qrScanner.jsx";
 
+import "./App.css"
 
+
+
+const APPOINTMENT_FILE = 'appointment.json';
+const CHECKLIST_FILE = 'checklist.json';
 
 const DEFAULT_LOCALE = 'de';
 
@@ -24,7 +26,7 @@ const MESSAGES = {
     'en': messages_en
 };
 
-const localeAtom = atom('de');
+const localeAtom = atom(document.documentElement.lang);
 export {localeAtom};
 
 
@@ -32,8 +34,6 @@ export {localeAtom};
 function App() {
 
 const [locale] = useAtom(localeAtom);
-
-const [passQrValue, setPassQrValue] = useState('');
 
   return (
 <IntlProvider locale={locale} defaultLocale={DEFAULT_LOCALE} messages={MESSAGES[locale]}>

@@ -1,0 +1,38 @@
+[
+  {
+    "PN": "ABC123",
+    "Language": "en",
+    "item1": "Vaccination card",
+    "item2": "Health insurance card",
+    "item3": "Identity card",
+    "item4": "Transfer slip",
+    "item5": "Results"
+  },
+  {
+    "PN": "ABC123",
+    "Language": "de",
+    "item1": "Impfpass",
+    "item2": "Krankenkassenkarte",
+    "item3": "Personalausweis",
+    "item4": "Überweisungsschein",
+    "item5": "Befunde"
+  },
+  {
+    "PN": "XZY789",
+    "Language": "en",
+    "item1": "Vaccination card",
+    "item2": "Health insurance card",
+    "item3": "Identity card",
+    "item4": "Transfer slip",
+    "item5": "Results"
+  },
+  {
+    "PN": "XZY789",
+    "Language": "de",
+    "item1": "Impfpass",
+    "item2": "Krankenkassenkarte",
+    "item3": "Personalausweis",
+    "item4": "Überweisungsschein",
+    "item5": "Befunde"
+  }
+]

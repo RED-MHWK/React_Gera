@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useLocation} from "wouter";
 import {Html5QrcodeScanner, Html5QrcodeScanType} from "html5-qrcode";
 

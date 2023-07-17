@@ -4,9 +4,14 @@ import {useLocation} from "wouter";
 import {FormattedDate, FormattedMessage, FormattedNumber} from "react-intl";
 
 import Header from "../Header/Header.jsx";
+
 import './Welcome.css'
+
 import Character from "./welcomeAssets/SRH_Nurse_welcome.png";
 import Arrow from "./welcomeAssets/arrow_orange_right.svg";
+
+
+
 function Welcome() {
 
     const [location, setLocation] = useLocation();
