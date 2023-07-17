@@ -36,7 +36,8 @@ function QrScanner(setPassQrValue){
         function qrSucces(qrResult){
             scanner.clear();
             console.log(qrResult)
-            setLocation("/");
+            if (qrResult == 'ABC123'){
+            setLocation("/Menu")}
             setPassQrValue(qrResult);
         }
         function qrError(qrErr){

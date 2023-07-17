@@ -17,3 +17,61 @@
     position: absolute;
     bottom: 0;
 }
+.buttonConWelcome{
+    padding-top: 10rem;
+    padding-right: 2rem;
+    grid-area: middleRight;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.forwardButton{
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    z-index: 2;
+    opacity: 0;
+}
+.forwardButtonArrow{
+    z-index: 1;
+    position: absolute;
+    height: 5rem;
+
+}
+.welcomeModal{
+    height: 40vh;
+    width: 60vw;
+    display: grid;
+    grid-template-areas:
+    "upperLeftM upperMiddleM upperRightM"
+    "middleLeftM middleM middleRightM"
+    "downLeftM downMiddleM downRightM"
+;
+    border: solid 2px #223944;
+    border-radius: 10px 10px 0 10px;
+}
+.welcomeModalClosed{
+    visibility: hidden;
+}
+.welcomeModal::backdrop{
+    background: rgba(34, 57, 68, 0.50);
+    backdrop-filter: blur(3px);
+}
+.acceptButton{
+    grid-area: downMiddleM;
+    height: 3rem;
+    width: 9rem;
+    border: solid 1px #223944;
+    border-radius: 5px 5px 0 5px;
+    color: #223944;
+    background-color: #FFFFFF;
+}
+.acceptButton:focus{
+    border: solid 2px #00699A;
+}
+.conditions{
+    grid-column-start: upperLeftM;
+    grid-row-start: upperLeftM;
+    grid-column-end: middleRightM;
+    grid-row-end: middleLeftM;
+}

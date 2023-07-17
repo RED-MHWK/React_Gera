@@ -43,9 +43,9 @@ const [passQrValue, setPassQrValue] = useState('');
         <Route path={'/Documents&Admission'} component={DocsAdmission}/>
         <Route path={'/ResponsibleTeam'} component={Team}/>
         <Route path={'/Menu'} component={Menu}/>
-        <Route path={'/Welcome'} component={Welcome}/>
         <Route path={'/QrScanner'} component={QrScanner}/>
-        <Route path={'/'} component={Login}/>
+        <Route path={'/Login'} component={Login}/>
+        <Route path={'/'} component={Welcome}/>
     </Switch>
 </IntlProvider>
   )
