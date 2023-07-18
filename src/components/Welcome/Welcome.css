@@ -36,7 +36,8 @@
     z-index: 1;
     position: absolute;
     height: 5rem;
-
+    transform: scaley(-1);
+    padding-left: 0.5rem;
 }
 .welcomeModal{
     height: 40vh;

@@ -16,11 +16,9 @@ import Character from "./loginAssets/SRH_Nurse_cutout.svg";
 
 
 
-function Login(passQrValue) {
+function Login() {
 
     const correctNumber = 'ABC123';
-
-    const preValue = passQrValue.toString();
 
 
 
@@ -53,8 +51,6 @@ function Login(passQrValue) {
     const onPatientNumberChange = event => {
         const {value} = event.target;
         setPatientNumber(value);
-
-        console.log(passQrValue)
 
         setShowError(value != correctNumber && value.length == 6);
         setShowErrorSymbol(value != correctNumber && value.length == 6);
