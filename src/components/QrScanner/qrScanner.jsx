@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useLocation} from "wouter";
 import {Html5QrcodeScanner, Html5QrcodeScanType} from "html5-qrcode";
 
@@ -8,14 +8,21 @@ import {FormattedMessage} from "react-intl";
 import Header from "../Header/Header.jsx";
 
 import './QrScanner.css'
+import axios from "axios";
+import {useAtom} from "jotai";
+import {patientNumberAtom} from "../../patientNumberAtom.js";
 
 
 
-function QrScanner(setPassQrValue){
+function QrScanner(){
+
+    document.title = 'scanning..'
+
+    const [patientNumber, setPatientnumber] = useAtom(patientNumberAtom)
 
     const [location, setLocation] = useLocation();
 
-
+    const [qrValue, setQrValue] = useState('');
 
     useEffect(() => {
 
@@ -34,17 +41,33 @@ function QrScanner(setPassQrValue){
         scanner.render(qrSucces, qrError);
 
         function qrSucces(qrResult){
-            scanner.clear();
             console.log(qrResult)
-            if (qrResult == 'ABC123'){
-            setLocation("/Menu")}
-            setPassQrValue(qrResult);
+            scanner.clear();
+            setQrValue(qrResult);
         }
-        function qrError(qrErr){
-           // console.warn(qrErr);
+        function qrError(){
+
         }
 
-    },[setLocation, setPassQrValue])
+        const fetchData = async () => {
+            try {
+                if (qrValue.length === 6) {
+                    const response = await axios.get(`http://localhost:8000/Gate/${qrValue}`);
+                    if (response.status === 200) {
+                        setPatientnumber(qrValue)
+                        if(patientNumber) {
+                            setLocation(`/Menu/${patientNumber}`)
+                        }
+                    }
+                } 
+            } catch (error) {
+                console.error('Error');
+            }
+        };
+
+        fetchData();
+
+    },[patientNumber, qrValue, setLocation, setPatientnumber])
 
 
     return(

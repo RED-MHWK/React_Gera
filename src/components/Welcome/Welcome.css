@@ -76,3 +76,16 @@
     grid-column-end: middleRightM;
     grid-row-end: middleLeftM;
 }
+.welcomeSubHead{
+    font-size: 1.2rem;
+}
+.h2Cont{
+    display: flex;
+    flex-direction: column;
+}
+.h2{
+    margin-bottom: 0.5rem;
+}
+.h2Highligth{
+    margin-bottom: 0.5rem;
+}

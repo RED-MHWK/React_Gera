@@ -3,12 +3,89 @@
     display: grid;
     grid-template-areas:
     "upperLeft upperMiddle upperRight"
-    "middleLeft middle middleRight"
+    "middleLeft middleMiddle middleRight"
     "downLeft downMiddle downRight"
 ;
 }
 /************************ /Main-Grid ************************/
 
-.placeHolder{
-    grid-area: middle;
+
+
+/************************ Color ************************/
+.color_srhBlue{
+    color: #00699A;
 }
+.color_srhOrange{
+    color: #DF4807;
+}
+.color_pureWhite{
+    color: #FFFFFF;
+}
+.color_nightBlue{
+    color: #223944;
+}
+/************************ /Color ************************/
+
+
+
+/************************ Background Color ************************/
+.bgColor_srhBlue{
+    background-color: #00699A;
+}
+.bgColor_srhOrange{
+    background-color: #DF4807;
+}
+.bgColor_pureWhite{
+    background-color: #FFFFFF;
+}
+.bgColor_nightBlue{
+    background-color: #223944;
+}
+/************************ /Background Color ************************/
+
+
+
+/************************ Container Styles ************************/
+.containerBubble {
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 4px 4px 0 4px #223944;
+}
+/************************ /Container Styles ************************/
+
+
+
+/************************ Displays ************************/
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+/**************** Alignments ****************/
+/****** Align *****/
+/*** Content ***/
+
+/*** /Content ***/
+/*** Self ***/
+
+/*** /Self ***/
+/*** Items ***/
+
+/*** /Items ***/
+/****** /Align *****/
+
+/****** Justify *****/
+
+
+/****** /Justify *****/
+/**************** /Alignments ****************/
+/************************ /Displays ************************/
+
+
+
+/************************ Font ************************/
+
+/************************ /Font ************************/

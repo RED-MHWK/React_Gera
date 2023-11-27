@@ -1,0 +1,12 @@
+[
+  {
+  "PN": "ABC123",
+  "Language": "en",
+  "date": "08/12/2023",
+  "time": "10:00",
+  "reason": "First meeting",
+  "section": "Main building",
+  "level": "0",
+  "color": "red"
+  }
+]

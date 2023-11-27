@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useLocation} from "wouter";
 
 import messages from './login.messages.js';
@@ -13,16 +13,20 @@ import arrow from './loginAssets/arrow_orange_right.svg'
 import disArrow from './loginAssets/arrow_nightblue_right.svg'
 import qrCodeIcon from './loginAssets/qr-code_orange.svg'
 import Character from "./loginAssets/SRH_Nurse_cutout.svg";
-
+import {useAtom} from "jotai";
+import {patientNumberAtom} from "../../patientNumberAtom.js";
+import axios from "axios";
 
 
 function Login() {
 
-    const correctNumber = 'ABC123';
+    document.title = 'Login'
 
+    const [patientNumber, setPatientnumber] = useAtom(patientNumberAtom)
 
+    const [logGate, setLogGate] = useState(false)
 
-    const [patientNumber , setPatientNumber] = useState('');
+    const [valueHolder, setValueholder] = useState('')
 
     const [showError , setShowError] = useState(false);
     const [showErrorSymbol, setShowErrorSymbol] = useState(false);
@@ -44,33 +48,60 @@ function Login() {
 
     const [location, setLocation] = useLocation();
 
+    const path = `http://localhost:8000/Gate/${valueHolder}`;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (valueHolder.length === 6) {
+                    const response = await axios.get(path);
+                    if (response.status === 200) {
+                        setPatientnumber(valueHolder);
+                        setLogGate(true);
+                        setHidePushableButton(true);
+                        setButtonAvailability(true);
+                    }
+                } else {
+                    setLogGate(false);
+                    setShowError(false);
+                    setShowErrorSymbol(false);
+                    setHidePushableButton(false);
+                    setButtonAvailability(false);
+                }
+            } catch (error) {
+                console.error('Error');
+                setShowError(true);
+                setShowErrorSymbol(true);
+                setLogGate(false);
+            }
+        };
+
+        fetchData();
+    }, [valueHolder, path, setPatientnumber]);
+
     const handleSubmit = event =>{
         event.preventDefault();
     }
 
     const onPatientNumberChange = event => {
         const {value} = event.target;
-        setPatientNumber(value);
-
-        setShowError(value != correctNumber && value.length == 6);
-        setShowErrorSymbol(value != correctNumber && value.length == 6);
 
         setQrScanAvailability(value == '');
         setQrHidden(value != '');
-        setHidePushableButton(value == correctNumber);
-        setHideInactiveButton(value != '' && value != correctNumber);
-        setButtonAvailability(value == correctNumber);
+        setHideInactiveButton(value != '' && logGate != true);
 
         const input = event.target;
         const start = input.selectionStart;
         const end = input.selectionEnd;
         input.value = input.value.toUpperCase();
         input.setSelectionRange(start, end);
+
+        setValueholder(input.value)
     }
 
     return (
         <>
-            <div className={'gridCon'}>
+            <section className={'gridCon'}>
                 <div className={'mainHeader'}></div>
 
                 <Header></Header>
@@ -85,11 +116,13 @@ function Login() {
                     <img src={Character} alt={'Nurse-Character'} className={'nurse'}/>
 
                     <div className={'inputCon'}>
-                         <input className={'numberInput'}
-                           id={'qrIdValue'}
-                           name={'patientNumber'}
-                           onChange={onPatientNumberChange}
-                           type={'text'} maxLength={6}/>
+                         <input
+                             className={'numberInput'}
+                             value={valueHolder}
+                             id={'qrIdValue'}
+                             name={'patientNumber'}
+                             onChange={onPatientNumberChange}
+                             type={'text'} maxLength={6}/>
                             {showErrorSymbol && <img src={alert} alt={'Alert-symbol'} className={'errorSymbol'}/>}
                     </div>
                     <div className={'errorCon'}>
@@ -102,7 +135,7 @@ function Login() {
 
                 <div className={'buttonCon'}>
                     <div className={'buttonBg'}>
-                        <button className={buttonAvailable} onClick={() => setLocation("/Menu")}></button>
+                        <button className={buttonAvailable} onClick={() => setLocation(`/Menu/${patientNumber}`)}></button>
                         <button className={qrScanAvailable} onClick={() => setLocation("/QrScanner")}></button>
                         <img src={arrow} alt={'Forward-Button-Icon'} className={pushAbleButton}/>
                         <img src={disArrow} alt={'Forward-Button-Icon_disabled'} className={inActiveButton}/>
@@ -110,7 +143,7 @@ function Login() {
                     </div>
                 </div>
 
-            </div>
+            </section>
         </>
     );
 }

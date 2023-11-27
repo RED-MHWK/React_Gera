@@ -17,8 +17,8 @@
     grid-column-start: upperLeft;
     grid-row-end: upperRight;
     grid-column-end: upperRight;
-    align-items: flex-end;
-    padding-left: 1.5rem;
+    align-items: flex-start;
+    justify-content: flex-end;
     width: 66vw;
 }
 .h2{

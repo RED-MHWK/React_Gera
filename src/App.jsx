@@ -1,6 +1,7 @@
-import {Route, Switch} from 'wouter';
+import {Route} from 'wouter';
 import {IntlProvider} from "react-intl";
 import {atom, useAtom} from "jotai";
+import {patientNumberAtom} from "./patientNumberAtom.js";
 
 import messages_en from '../lang/en.json'
 
@@ -16,37 +17,33 @@ import QrScanner from "./components/QrScanner/qrScanner.jsx";
 import "./App.css"
 
 
-
-const APPOINTMENT_FILE = 'appointment.json';
-const CHECKLIST_FILE = 'checklist.json';
-
-const DEFAULT_LOCALE = 'de';
+const DEFAULT_LOCALE = 'de-DE';
 
 const MESSAGES = {
-    'en': messages_en
+    'en-US': messages_en
 };
 
-const localeAtom = atom(document.documentElement.lang);
-export {localeAtom};
-
-
+const langAtom = atom(navigator.language);
+export {langAtom};
 
 function App() {
 
-const [locale] = useAtom(localeAtom);
+const [patientNumber, setPatientnumber] = useAtom(patientNumberAtom)
+
+const [locale] = useAtom(langAtom);
 
   return (
 <IntlProvider locale={locale} defaultLocale={DEFAULT_LOCALE} messages={MESSAGES[locale]}>
-    <Switch>
-        <Route path={'/Appointemt&Information'} component={AppointmentDetails}/>
-        <Route path={'/Checklist'} component={Checklist}/>
-        <Route path={'/Documents&Admission'} component={DocsAdmission}/>
-        <Route path={'/ResponsibleTeam'} component={Team}/>
-        <Route path={'/Menu'} component={Menu}/>
+
+        <Route path={`/Appointment&Information/${patientNumber}`} component={AppointmentDetails}/>
+        <Route path={`/Checklist/${patientNumber}`} component={Checklist}/>
+        <Route path={`/Documents&Admission/${patientNumber}`} component={DocsAdmission}/>
+        <Route path={`/ResponsibleTeam/${patientNumber}`} component={Team}/>
+        <Route path={`/Menu/${patientNumber}`} component={Menu} patientNumber={patientNumber} lang={locale}/>
         <Route path={'/QrScanner'} component={QrScanner}/>
         <Route path={'/Login'} component={Login}/>
         <Route path={'/'} component={Welcome}/>
-    </Switch>
+
 </IntlProvider>
   )
 }

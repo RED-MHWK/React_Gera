@@ -18,9 +18,9 @@
     grid-column-start: upperLeft;
     grid-row-end: upperMiddle;
     grid-column-end: upperMiddle;
-    align-items: flex-end;
-    padding-left: 1.5rem;
+    align-items: flex-start;
     width: 33vw;
+    padding-left: 1rem;
 }
 .h2{
     font-size: 1.5rem;

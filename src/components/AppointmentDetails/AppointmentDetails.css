@@ -8,3 +8,44 @@
     background-color: #FFFFFF;
     padding-bottom: 5vh;
 }
+.scrollContainer{
+    grid-row-start: middleLeft;
+    grid-column-start: middleLeft;
+    grid-row-end: downRight;
+    grid-column-end: downRight;
+    height: 72vh;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border: solid 2px #223944;
+    border-radius: 20px 20px 0 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+.playButton{
+    border: solid 2px #223944;
+    border-radius: 10px 10px 0 10px;
+    background-color: #ffffff;
+    color: #223944;
+    width: 50vw;
+    height: 2rem;
+    align-self: center;
+}
+.videoPlayer{
+    margin-top: 0.2rem;
+    margin-bottom: 2rem;
+    align-self: center;
+    width: 92vw;
+    height: auto;
+
+}
+.mainInfo{
+    margin: 0.5rem;
+}
+.playerCont{
+    display: flex;
+    flex-direction: column;
+}

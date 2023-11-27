@@ -2,6 +2,7 @@ import {useState} from "react";
 import {useLocation} from "wouter";
 
 import {FormattedDate, FormattedMessage, FormattedNumber} from "react-intl";
+import messages from "./welcome.messages.js";
 
 import Header from "../Header/Header.jsx";
 
@@ -12,7 +13,10 @@ import Arrow from "./welcomeAssets/arrow_orange_right.svg";
 
 
 
+
 function Welcome() {
+
+    document.title = 'Welcome'
 
     const [location, setLocation] = useLocation();
 
@@ -43,11 +47,15 @@ function Welcome() {
         <>
             <dialog id={'privacy'} className={modalVisible}>
                 <p className={'conditions'}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <button className={'acceptButton'} onClick={modalCloseHandle}>Akzeptieren</button>
+                <button className={'acceptButton'} onClick={modalCloseHandle}><FormattedMessage {...messages.welcomeModal}/></button>
             </dialog>
             <div className={'gridCon'}>
                 <div className={'welcomeHeader'}></div>
                 <Header></Header>
+                <div className={'h2Cont'}>
+                    <p className={'h2Highligth'}><FormattedMessage {...messages.welcomeHeaderp1}/><span className={'h2'}><FormattedMessage {...messages.welcomeHeaderp2}/></span><FormattedMessage {...messages.welcomeHeaderp3}/></p>
+                    <p className={'welcomeSubHead'}><FormattedMessage {...messages.welcomeSubHead}/></p>
+                </div>
                 <img src={Character} alt={'NurseCharacter'} className={'nurseWelcome'}/>
                 <div className={'buttonConWelcome'}>
                     <div className={'buttonBg'}>

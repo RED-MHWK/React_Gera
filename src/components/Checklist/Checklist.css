@@ -8,3 +8,48 @@
     background-color: #FFFFFF;
     padding-bottom: 5vh;
 }
+
+.checklistCon{
+    grid-row-start: middleLeft;
+    grid-column-start: middleLeft;
+    grid-row-end: downRight;
+    grid-column-end: downRight;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+.checklistItemtrue{
+    background-color: #ffffff;
+    height: 5rem;
+    width: 95vw;
+    background-image: url(src/components/Checklist/ckecklistAssets/check_checked_nightblue.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 3rem;
+    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 1rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    border: solid 2px #00699a;
+    font-size: 1rem;
+    color: #223944;
+}
+.checklistItemfalse{
+    background-color: #ffffff;
+    height: 5rem;
+    width: 95vw;
+    background-image: url(src/components/Checklist/ckecklistAssets/check_unchecked_nightblue.png);
+    background-position: right 1rem;
+    background-repeat: no-repeat;
+    background-size: 3rem;
+    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 1rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    border: solid 2px #223944;
+    font-size: 1rem;
+    color: rgba(34, 57, 68, 0.8);
+}
